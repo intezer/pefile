@@ -3640,7 +3640,7 @@ class PE(object):
                     continue
 
                 # Checking for forwarder again.
-                if symbol_address >= rva and symbol_address < rva+size:
+                if symbol_address is not None and symbol_address >= rva and symbol_address < rva+size:
                     forwarder_str = self.get_string_at_rva(symbol_address)
                 else:
                     forwarder_str = None
